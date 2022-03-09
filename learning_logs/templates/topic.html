@@ -1,0 +1,22 @@
+<!--
+ * @Author: Mr. Zhangyi
+ * @Date: 2022-03-09 16:06:23
+ * @FilePath: /learning_log/learning_logs/templates/topic.html
+ * @Description: 
+ * Copyright (c) 2022 by Mr. Zhangyi/Chinatelecom, All Rights Reserved. 
+ * @version: v0.1
+-->
+{% extends 'base.html' %} {% block content %}
+<p>Topic: {{ topic }}</p>
+<p>Entries:</p>
+<ul>
+    {% for entry in entries %}
+    <li>
+        <p>{{ entry.date_added|date:'M d, Y H:i' }}</p>
+        <p>{{ entry.text|linebreaks }}</p>
+    </li>
+    {% empty %}
+    <li>There are no entries for this topic yet.</li>
+    {% endfor %}
+</ul>
+{% endblock content %}

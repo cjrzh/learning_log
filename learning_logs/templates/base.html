@@ -1,0 +1,13 @@
+<!--
+ * @Author: Mr. Zhangyi
+ * @Date: 2022-03-09 10:23:48
+ * @FilePath: /learning_log/learning_logs/templates/base.html
+ * @Description: 
+ * Copyright (c) 2022 by Mr. Zhangyi/Chinatelecom, All Rights Reserved. 
+ * @version: v0.1
+-->
+<p>
+    <a href="{% url 'learning_logs:index' %}">Learning Log</a>
+    <a href="{% url 'learning_logs:topics' %}">Topics</a>
+</p>
+{% block content %}{% endblock content %}
