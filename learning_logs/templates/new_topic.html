@@ -1,0 +1,17 @@
+<!--
+ * @Author: Mr. Zhangyi
+ * @Date: 2022-03-10 15:44:14
+ * @FilePath: /learning_log/learning_logs/templates/new_topic.html
+ * @Description: 
+ * Copyright (c) 2022 by Mr. Zhangyi/Chinatelecom, All Rights Reserved. 
+ * @version: v0.1
+-->
+{% extends "base.html" %}
+{% block content %}
+<p>Add a new topic:</p>
+<form action="{% url 'learning_logs:new_topic' %}" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button name="submit">Add topic</button>
+</form>
+{% endblock content %}

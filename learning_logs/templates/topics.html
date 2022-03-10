@@ -6,12 +6,16 @@
  * Copyright (c) 2022 by Mr. Zhangyi/Chinatelecom, All Rights Reserved. 
  * @version: v0.1
 -->
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+{% block content %}
 <p>Topics</p>
 <ul>
     {% for topic in topics %}
-    <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a> {% empty %}
+    <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
+    <br>
+    {% empty %}
     <li>No topics have been added yet.</li>
     {% endfor %}
 </ul>
+<a href="{% url 'learning_logs:new_topic' %}">Add a new topic</a>
 {% endblock content %}
